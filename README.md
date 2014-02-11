@@ -1,6 +1,6 @@
 # cppjieba-webdemo
 
-this demo is writed by node.js
+this demo is written by node.js
 
 ## install & run
 

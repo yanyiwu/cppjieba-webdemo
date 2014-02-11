@@ -1,11 +1,18 @@
 {
   "name:": "cppjieba-webdemo",
   "description": "just a demo for cppjieba",
+  "author": "Yanyi Wu <wuyanyi09@gmail.com>",
+  "keywords": [
+    "chinese",
+    "segment",
+    "cppjieba"
+  ],
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "express": "3.4.8",
-    "log4js": "0.6.10"
+    "log4js": "0.6.10",
+    "nodejieba": "0.1.1"
   }
+
 }
   

@@ -2,7 +2,10 @@ var express = require("express");
 var logger = require("log4js").getLogger("app.js");
 var fs = require("fs"); 
 var http = require("http");
+var nodejieba = require("nodejieba");
 var app = express();
+
+nodejieba.loadDict("./node_modules/nodejieba/dict/jieba.dict.utf8", "./node_modules/nodejieba/dict/hmm_model.utf8");
 
 app.use(express.bodyParser());
 
@@ -24,6 +27,7 @@ app.post('/', function(req, res) {
         method : 'GET'
     };
     console.log(req.body.sentence);
+    console.log(nodejieba.cut(req.body.sentence));
     //res.send(req.body.sentence + req.body.sentence);
     var reqGet = http.request(options, function(resGet){
         resGet.on('data', function(d){
@@ -32,10 +36,12 @@ app.post('/', function(req, res) {
     });
     reqGet.end();
     reqGet.on('error', function(err){
-        console.error(err);
+        logger.error(err);
     });
 });
 
 app.listen(4000);
 
 logger.info("Listening on port 4000");
+
+module.exports = app;

@@ -26,18 +26,9 @@ app.post('/', function(req, res) {
         path : '/?key=' + req.body.sentence,
         method : 'GET'
     };
-    console.log(req.body.sentence);
-    console.log(nodejieba.cut(req.body.sentence));
-    //res.send(req.body.sentence + req.body.sentence);
-    var reqGet = http.request(options, function(resGet){
-        resGet.on('data', function(d){
-            res.send(d);
-        });
-    });
-    reqGet.end();
-    reqGet.on('error', function(err){
-        logger.error(err);
-    });
+    var words = nodejieba.cut(req.body.sentence);
+    res.send(words);
+    console.log("%s -> %s", req.body.sentence, words);
 });
 
 app.listen(4000);

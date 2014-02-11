@@ -9,6 +9,10 @@ npm install
 node app.js
 ```
 
+## demo
+
+http://115.28.134.134:4000/cppjieba
+
 ## contact
 
 wuyanyi09@gmail.com

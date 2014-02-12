@@ -31,8 +31,10 @@ app.post('/', function(req, res) {
     console.log("%s -> %s", req.body.sentence, words);
 });
 
-app.listen(4000);
+var port = 80;
 
-logger.info("Listening on port 4000");
+app.listen(port);
+
+logger.info("Listening on port %d", port);
 
 module.exports = app;

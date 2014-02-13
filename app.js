@@ -33,6 +33,7 @@ app.post('/', function(req, res) {
 });
 
 var port = (process.env.PORT || 5000);
+app.listen(port);
 
 logger.info("Listening on port %d", port);
 

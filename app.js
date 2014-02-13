@@ -10,7 +10,6 @@ nodejieba.loadDict("./node_modules/nodejieba/dict/jieba.dict.utf8", "./node_modu
 app.use(express.bodyParser());
 
 app.get('/cppjieba', function(req, res){
-    res.send("hhehe");
     fs.readFile("./public/index.html", function(err, data){
         if(err){
             return err;
@@ -21,12 +20,6 @@ app.get('/cppjieba', function(req, res){
 });
 
 app.post('/', function(req, res) {
-    var options = {
-        host : 'localhost',
-        port : '11200',
-        path : '/?key=' + req.body.sentence,
-        method : 'GET'
-    };
     var words = nodejieba.cut(req.body.sentence);
     res.send(words);
     console.log("%s -> %s", req.body.sentence, words);

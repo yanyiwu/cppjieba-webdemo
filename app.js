@@ -9,7 +9,7 @@ nodejieba.loadDict("./node_modules/nodejieba/dict/jieba.dict.utf8", "./node_modu
 
 app.use(express.bodyParser());
 
-app.get('/cppjieba', function(req, res){
+app.get('/', function(req, res){
     fs.readFile("./public/index.html", function(err, data){
         if(err){
             return err;

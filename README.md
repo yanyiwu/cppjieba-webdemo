@@ -12,6 +12,7 @@ node app.js
 ## demo
 
 http://cppjieba-webdemo.herokuapp.com/
+(chrome is suggested)
 
 ## contact
 
